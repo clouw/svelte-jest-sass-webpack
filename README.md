@@ -1,11 +1,27 @@
+# svelte-jest-sass
+
+## Features
+This template includes:
+
+* **Webpack**
+* **Svelte**
+* **Jest**
+
 # svelte app
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template-webpack.
+This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
 To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
 
+
+Install degit
+
 ```bash
-npx degit sveltejs/template-webpack svelte-app
+yarn global add degit
+```
+
+```bash
+yarn exec degit clouw/svelte-jest-sass-webpack svelte-app
 cd svelte-app
 ```
 
@@ -18,47 +34,26 @@ Install the dependencies...
 
 ```bash
 cd svelte-app
-npm install
+yarn install
 ```
 
-...then start webpack:
+...then start [Rollup](https://rollupjs.org):
 
 ```bash
-npm run dev
+yarn dev
 ```
 
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and the page should reload with your changes.
+Navigate to [localhost:5000](http://localhost:5000).
 
+## Building and running in production mode
 
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
+To create an optimised version of the app:
 
 ```bash
-npm install -g now
+yarn build
 ```
 
-Then, from within your project folder:
+## Sources
 
-```bash
-now
-```
+* [Testing svelte components with jest](https://dev.to/jpblancodb/testing-svelte-components-with-jest-53h3)
 
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
-```
