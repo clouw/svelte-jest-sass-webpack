@@ -4,6 +4,8 @@ const path = require('path');
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
+const { scss } = require('svelte-preprocess');
+
 module.exports = {
 	entry: {
 		bundle: ['./src/main.js']
@@ -28,7 +30,10 @@ module.exports = {
 					loader: 'svelte-loader',
 					options: {
 						emitCss: true,
-						hotReload: true
+						hotReload: true,
+						preprocess: require('svelte-preprocess')([
+							scss()
+						])
 					}
 				}
 			},
