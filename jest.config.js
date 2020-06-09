@@ -7,5 +7,6 @@ module.exports = {
   testPathIgnorePatterns: ["node_modules", "cypress", "__sapper__"],
   bail: false,
   verbose: true,
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"]
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  setupFiles: ["./test/setup.js"],
 };

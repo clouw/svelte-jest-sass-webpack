@@ -6,6 +6,7 @@ This template includes:
 * **Webpack**
 * **Svelte**
 * **Jest**
+* **Dotenv (custom-env)**
 
 # svelte app
 

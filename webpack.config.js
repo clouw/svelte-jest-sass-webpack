@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
@@ -5,6 +7,11 @@ const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
 const { scss } = require('svelte-preprocess');
+
+// Load env
+const customEnv = require('custom-env');
+const targetEnv = process.env.TARGET_ENV || mode;
+customEnv.env(targetEnv, './', '.env')
 
 module.exports = {
 	entry: {
@@ -54,7 +61,11 @@ module.exports = {
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
-		})
+		}),
+
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env)
+    })
 	],
 	devtool: prod ? false: 'source-map'
 };
