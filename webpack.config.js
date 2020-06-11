@@ -39,7 +39,7 @@ module.exports = {
 						emitCss: true,
 						hotReload: true,
 						preprocess: require('svelte-preprocess')([
-							scss()
+							scss(),
 						])
 					}
 				}
@@ -52,7 +52,8 @@ module.exports = {
 					 * For developing, use 'style-loader' instead.
 					 * */
 					prod ? MiniCssExtractPlugin.loader : 'style-loader',
-					'css-loader'
+					'css-loader',
+					'postcss-loader'
 				]
 			}
 		]
