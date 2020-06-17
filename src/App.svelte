@@ -1,32 +1,49 @@
 <script>
 	import Tailwindcss from './components/Tailwindcss.svelte';
-	export let name;
 
+	import Router, {link} from 'svelte-spa-router';
+	import active from 'svelte-spa-router/active';
+
+	import Home from './routes/Home.svelte';
+	import About from './routes/About.svelte';
+
+	const routes = {
+		"/": Home,
+		"/about": About,
+	};
 </script>
 
 <Tailwindcss />
 
 <div class="container">
-	<h1>Hello {name}!</h1>
+	<ul class="menu">
+			<li class="menu-item">
+				<a href="/" class="menu-item-link" use:link	use:active>
+					Home
+				</a>
+			</li>
 
-	<h2>Setting Environment Variables</h2>
-	<p>
-		add .env.development with:
-	</p>
+			<li class="menu-item">
+				<a href="/about" class="menu-item-link"	use:link use:active>
+					About
+				</a>
+			</li>
+		</ul>
 
-	<code>
-	APP_ENV=development
-	</code>
-
-	<h3>current APP_ENV : {process.env.APP_ENV}</h3>
-
-	<button class="btn btn-blue">
-		Button Tailwindcss
-	</button>
+	<Router {routes}/>
 </div>
 
-<style type="text/scss">
-	$h1-color: purple;
+
+<style global type="text/scss">
+	body {
+		@apply font-sans antialiased;
+	}
+
+	.container {
+		@apply p-4 m-auto;
+	}
+
+	$h1-color: #FF3F01;
 
 	.container {
 		@apply p-4 m-auto;
@@ -51,24 +68,26 @@
 		color: $h1-color;
 	}
 
+	a {
+		@apply text-blue-700;
+	}
 	p {
 		@apply p-4;
 	}
 
-  .btn {
-    @apply font-bold py-2 px-4 rounded;
-	}
+	.menu {
+		@apply flex;
 
-  .btn-blue {
-		@apply bg-blue-500 text-white;
+		.menu-item {
+			@apply mr-3;
 
-		&:hover {
-			@apply bg-blue-700;
+			.menu-item-link {
+				@apply inline-block border border-orange-600 rounded py-1 px-3 text-gray-900;
+
+				&.active {
+					@apply bg-orange-300;
+				}
+			}
 		}
-	}
-
-	code {
-		display: block;
-		@apply bg-gray-300 p-4;
 	}
 </style>

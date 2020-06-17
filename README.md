@@ -7,6 +7,8 @@ This template includes:
 * **Svelte**
 * **Jest**
 * **Dotenv (custom-env)**
+* **Tailwindcss**
+* **Router (svelte-spa-router)**
 
 # svelte app
 
@@ -54,8 +56,21 @@ To create an optimised version of the app:
 yarn build
 ```
 
+## Test (jest)
+
+Run test
+
+```bash
+yarn test:unit
+```
+
+```bash
+yarn test:unit:watch
+```
+
 ## Sources
 
 * [Testing svelte components with jest](https://dev.to/jpblancodb/testing-svelte-components-with-jest-53h3)
+* [Using svelte with tailwindcss a better approach](https://dev.to/sarioglu/using-svelte-with-tailwindcss-a-better-approach-47ph)
 * [Using svelte with tailwindcss a better approach](https://dev.to/sarioglu/using-svelte-with-tailwindcss-a-better-approach-47ph)
 
