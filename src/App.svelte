@@ -1,6 +1,4 @@
 <script>
-	import Tailwindcss from './components/Tailwindcss.svelte';
-
 	import Router, {link} from 'svelte-spa-router';
 	import active from 'svelte-spa-router/active';
 
@@ -12,8 +10,6 @@
 		"/about": About,
 	};
 </script>
-
-<Tailwindcss />
 
 <div class="container">
 	<ul class="menu">
@@ -35,6 +31,10 @@
 
 
 <style global type="text/scss">
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
 	body {
 		@apply font-sans antialiased;
 	}

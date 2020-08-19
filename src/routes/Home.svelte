@@ -5,7 +5,7 @@
 
 <h1>Hello {name}!</h1>
 
-<img src="/logo.svg" class="max-w-xs" alt="logo" />
+<img src="logo.svg" class="max-w-xs" alt="logo" />
 
 <h2>Setting Environment Variables</h2>
 <p>
