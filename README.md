@@ -72,5 +72,4 @@ yarn test:unit:watch
 
 * [Testing svelte components with jest](https://dev.to/jpblancodb/testing-svelte-components-with-jest-53h3)
 * [Using svelte with tailwindcss a better approach](https://dev.to/sarioglu/using-svelte-with-tailwindcss-a-better-approach-47ph)
-* [Using svelte with tailwindcss a better approach](https://dev.to/sarioglu/using-svelte-with-tailwindcss-a-better-approach-47ph)
 
