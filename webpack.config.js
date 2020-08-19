@@ -8,12 +8,19 @@ const prod = mode === 'production';
 
 const { scss } = require('svelte-preprocess');
 
+const TerserJSPlugin = require("terser-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+
 // Load env
 const customEnv = require('custom-env');
 const targetEnv = process.env.TARGET_ENV || mode;
 customEnv.env(targetEnv, './', '.env')
 
 module.exports = {
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+	},
+
 	entry: {
 		bundle: ['./src/main.js']
 	},
